@@ -13,6 +13,8 @@ First I split the image into pixels, each pixel has an RGB value. I use the RGB 
 3. run `go build .`
 4. run `./ascii-go` (`ascii-go.exe` if you're on windows) you should see the usage instructions
 
+The result is best viewed with a zoomed-out text editor with no-syntax highlighting, a low line-height improves the effect further too.
+
 **Note:** if the output doesn't look totally right, try using the `--invert` flag. this uses denser characters for lower brightness pixels and vice-versa
 
 Happy Ascii-ing!

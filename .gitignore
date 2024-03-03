@@ -1,4 +1,5 @@
 # output file
 ascii-result
+*.out
 # compiled binary
 ascii-go
