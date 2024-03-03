@@ -1,4 +1,4 @@
-I started learning golang last week, and this is my first project using it.
+I started learning golang last week (April 2024), and this is my first project using it.
 
 the program takes a PNG image and converts it to ascii art.
 
