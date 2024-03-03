@@ -1,3 +1,4 @@
+# ascii-go 
 I started learning golang last week (April 2024), and this is my first project using it.
 
 the program takes a PNG image and converts it to ascii art.
@@ -5,6 +6,10 @@ the program takes a PNG image and converts it to ascii art.
 ## How does it work?
 
 First I split the image into pixels, each pixel has an RGB value. I use the RGB value to determine the brightness of a each pixel. finally I map the brightness to a character from an ascii character set and output the result to a file
+
+Here is what the output looks like (this is k9 from doctor who!)
+
+<img src="https://github.com/spcbfr/ascii-go/assets/77839865/4fc4223c-2ed8-4cee-b03a-659b452775a1" width="500" />
 
 ## How to use
 
@@ -18,3 +23,9 @@ The result is best viewed with a zoomed-out text editor with no-syntax highlight
 **Note:** if the output doesn't look totally right, try using the `--invert` flag. this uses denser characters for lower brightness pixels and vice-versa
 
 Happy Ascii-ing!
+
+## To work on
+- [ ] support Image formats other than PNG
+- [ ] better brightness calculation algorithm
+- [ ] pull image from remote source
+- [ ] reduce image size for images larger than a certain size
