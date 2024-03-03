@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	inputFile, outputFile := cmdFlags()
+	inputFile, outputFile, inverted := cmdFlags()
 
 	if inputFile == "" {
 		fmt.Println("An input file is required")
@@ -32,7 +32,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	ascii := getAscii(pixels)
+	ascii := getAscii(pixels, inverted)
 
 	if outputFile != "" {
 		f, err := os.Create(outputFile)

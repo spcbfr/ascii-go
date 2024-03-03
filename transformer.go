@@ -5,25 +5,32 @@ import (
 	"io"
 )
 
-func getAsciiChar(brightness int) string {
+func getAsciiChar(brightness int, invert bool) string {
 	const codes = "Ñ@#W$9876543210?!abc;:+=-,._          "
-	charCode := int(mapRange(float64(brightness), 0, 255, float64(len(codes)), 0))
-	return string(codes[charCode])
+	var charCode int
 
+	if invert {
+		charCode = int(mapRange(float64(brightness), 0, 255, 0, float64(len(codes)-1)))
+	} else {
+		charCode = int(mapRange(float64(brightness), 0, 255, float64(len(codes)), 0))
+	}
+
+	return string(codes[charCode])
 }
 
-func getAscii(data [][]Pixel) string {
+func getAscii(data [][]Pixel, invert bool) string {
 	var result string
 	for y := 0; y < len(data); y++ {
 		var line string
 		for x := 0; x < len(data[y]); x++ {
 
-			line = line + getAsciiChar(brightness(data[y][x]))
+			line = line + getAsciiChar(brightness(data[y][x]), invert)
 		}
 		result = result + line + "\n"
 	}
 	return result
 }
+
 func getPixels(file io.Reader) ([][]Pixel, error) {
 	img, _, err := image.Decode(file)
 	if err != nil {

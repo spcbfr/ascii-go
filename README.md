@@ -11,6 +11,8 @@ First I split the image into pixels, each pixel has an RGB value. I use the RGB 
 1. Install [golang](https://go.dev/doc/install)
 2. clone the project `git clone https://github.com/spcbfr/ascii-go.git`
 3. run `go build .`
-4. run `./ascii-go` or (`ascii-go.exe` if you're on windows) you should see the usage instructions
+4. run `./ascii-go` (`ascii-go.exe` if you're on windows) you should see the usage instructions
+
+**Note:** if the output doesn't look totally right, try using the `--invert` flag. this uses denser characters for lower brightness pixels and vice-versa
 
 Happy Ascii-ing!
