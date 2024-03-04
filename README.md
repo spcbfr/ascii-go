@@ -9,7 +9,7 @@ First I split the image into pixels, each pixel has an RGB value. I use the RGB 
 
 Here is what the output looks like (this is k9 from doctor who!)
 
-<img src="https://github.com/spcbfr/ascii-go/assets/77839865/4fc4223c-2ed8-4cee-b03a-659b452775a1" width="500" />
+<img src="https://github.com/spcbfr/ascii-go/assets/77839865/2ae6077f-384f-44af-9bd8-962c0baaaebf" width="500" />
 
 ## How to use
 
