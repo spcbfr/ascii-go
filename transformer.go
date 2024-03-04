@@ -5,17 +5,23 @@ import (
 	"io"
 )
 
-func getAsciiChar(brightness int, invert bool) string {
+func getAsciiChar(brightness float64, invert bool) string {
 	const codes = "Ñ@#W$9876543210?!abc;:+=-,._          "
 	var charCode int
 
 	if invert {
-		charCode = int(mapRange(float64(brightness), 0, 255, 0, float64(len(codes)-1)))
+		charCode = int(mapRange(brightness, 0, 255, 0, float64(len(codes)-1)))
 	} else {
-		charCode = int(mapRange(float64(brightness), 0, 255, float64(len(codes)), 0))
+		charCode = int(mapRange(brightness, 0, 255, float64(len(codes)), 0))
 	}
 
 	return string(codes[charCode])
+}
+
+type Pixel struct {
+	R int
+	G int
+	B int
 }
 
 func getAscii(data [][]Pixel, invert bool) string {
@@ -52,15 +58,10 @@ func getPixels(file io.Reader) ([][]Pixel, error) {
 func rgbaToPixel(r uint32, g uint32, b uint32, _ uint32) Pixel {
 	return Pixel{int(r / 257), int(g / 257), int(b / 257)}
 }
-func brightness(pixel Pixel) int {
-	// placeholder calculation method
-	return (pixel.R + pixel.G + pixel.B) / 3
-}
 
-type Pixel struct {
-	R int
-	G int
-	B int
+func brightness(pixel Pixel) float64 {
+	// placeholder calculation method
+	return float64(pixel.R+pixel.G+pixel.B) / 3
 }
 
 func mapRange(value, minInput, maxInput, minOutput, maxOutput float64) float64 {
