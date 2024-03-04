@@ -26,6 +26,6 @@ Happy Ascii-ing!
 
 ## To work on
 - [ ] support Image formats other than PNG
-- [ ] better brightness calculation algorithm
+- [x] better brightness calculation algorithm
 - [ ] pull image from remote source
 - [ ] reduce image size for images larger than a certain size

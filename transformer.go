@@ -59,11 +59,6 @@ func rgbaToPixel(r uint32, g uint32, b uint32, _ uint32) Pixel {
 	return Pixel{int(r / 257), int(g / 257), int(b / 257)}
 }
 
-func brightness(pixel Pixel) float64 {
-	// placeholder calculation method
-	return float64(pixel.R+pixel.G+pixel.B) / 3
-}
-
 func mapRange(value, minInput, maxInput, minOutput, maxOutput float64) float64 {
 	// Clamping the value to the input range
 	if value < minInput {
