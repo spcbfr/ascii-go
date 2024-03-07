@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-const usage = `Usage of ascii-go:
+const FLAG_USAGE = `Usage of ascii-go:
 	-i, --input <file>   The image to be converted
 	-o, --output <file>  The result file
 	-c, --invert inverts the image colors
@@ -27,7 +27,7 @@ func cmdFlags() (string, string, bool) {
 	flag.StringVar(&output, "o", "", "The result file")
 	flag.BoolVar(&inverted, "c", false, "Invert the colors of output")
 
-	flag.Usage = func() { fmt.Print(usage) }
+	flag.Usage = func() { fmt.Print(FLAG_USAGE) }
 	flag.Parse()
 
 	return input, output, inverted

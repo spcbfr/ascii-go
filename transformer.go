@@ -6,16 +6,16 @@ import (
 )
 
 func getAsciiChar(brightness float64, invert bool) string {
-	const codes = "Ñ@#W$9876543210?!abc;:+=-,._          "
+	const CODES = "Ñ@#W$9876543210?!abc;:+=-,._          "
 	var charCode int
 
 	if invert {
-		charCode = int(mapRange(brightness, 0, 255, 0, float64(len(codes)-1)))
+		charCode = int(mapRange(brightness, 0, 255, 0, float64(len(CODES)-1)))
 	} else {
-		charCode = int(mapRange(brightness, 0, 255, float64(len(codes)), 0))
+		charCode = int(mapRange(brightness, 0, 255, float64(len(CODES)), 0))
 	}
 
-	return string(codes[charCode])
+	return string(CODES[charCode])
 }
 
 type Pixel struct {

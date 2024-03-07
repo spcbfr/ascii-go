@@ -13,7 +13,7 @@ func main() {
 
 	if inputFile == "" {
 		fmt.Println("An input file is required")
-		fmt.Print(usage)
+		fmt.Print(FLAG_USAGE)
 	}
 
 	image.RegisterFormat("png", "png", png.Decode, png.DecodeConfig)
