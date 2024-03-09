@@ -19,7 +19,6 @@ any one of them to manually compare their differences
 func brightness(pixel Pixel) float64 {
 
 	// Algorithm #1
-	// this one simply returns the average of the 3 RGB channels
 	// return float64(pixel.R+pixel.G+pixel.B) / 3
 
 	// Algorithm #2
